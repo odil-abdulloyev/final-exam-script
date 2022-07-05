@@ -7,3 +7,7 @@ document.body.append(iframe);
 const style = document.createElement('style');
 style.textContent = `* { user-select: text !important; }`;
 document.head.append(style);
+document.onvisibilitychange = null;
+window.addEventListener('visibilitychange', (event) => {
+    event.stopImmediatePropagation();
+}, true);
